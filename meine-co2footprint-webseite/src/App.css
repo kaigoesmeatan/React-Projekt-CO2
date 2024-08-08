@@ -1,4 +1,6 @@
+/* ------------------------------------------------------------------------------------ */
 /* Allgemeine Stile für den Header */
+/* ------------------------------------------------------------------------------------ */
 .header-flex {
   display: flex;
   flex-direction: row; /* Ausrichtung nebeneinander */
@@ -7,6 +9,43 @@
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Schatten für einen 3D-Effekt */
 }
+
+/* ------------------------------------------------------------------------------------ */
+/* Stile für die Navigationsreiter */
+/* ------------------------------------------------------------------------------------ */
+
+.nav .nav-link {
+  background-color: #f3f3f3; /* Hintergrundfarbe für Reiter */
+  border: none; /* Leichte Grenze für Reiter */
+  border-radius: 4px; /* Abgerundete Ecken für Reiter */
+  padding: 5px 10px; /* Innenabstand für Reiter => etwas Padding für bessere Klickfläche */
+  cursor: pointer; /* Zeiger-Cursor für Klickbarkeit */
+  text-decoration: none; /* Keine Unterstreichung der Links */
+  color: #343a40; /* Textfarbe */
+  font-size: 15px; /* Schriftgröße */
+  transition: background-color 0.3s, color 0.3s; /* Übergangseffekte für Hintergrund- und Textfarbe */
+  width: 110px; /* festes Breite */
+  height: 70px; /* feste Höhe */
+  margin-top: 10px;
+}
+/* Stil für den aktiven Reiter */
+.nav .nav-link.active {
+  background-color: #343a40; /* Dunkler Hintergrund für aktiven Reiter */
+  color: rgb(255, 255, 255); /* Weiße Textfarbe für aktiven Reiter */
+  text-decoration: underline;
+  font-weight: bold; /* Fettdruck für aktiven Reiter */
+  margin-top: 10px;
+  width: 120px; /* Anpassung des Reiters zur besseren Visualisierung */
+  height: 75px; /* Anpassung des Reiters zur besseren Visualisierung */
+}
+
+/* Hover-Effekt für Reiter */
+.nav .nav-link:hover {
+  background-color: #f9f9f9 !important; /* Hellerer Hintergrund bei Hover */
+  color: #343a40!important; /* Textfarbe bei Hover */
+  text-decoration: underline!important;
+}
+
 .nav-link {
   font-size: 16px; /* Standard Schriftgröße */
   padding: 10px 15px; /* Standard Padding */
@@ -35,13 +74,14 @@
 .nav-container {
   display: flex;
   align-items: center;
+  margin-bottom: 10px; /* Abstand nach unten für bessere Lesbarkeit */
 }
 
 /* Navigation Reiter */
 .nav {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 5px;
+  padding: 5px;
   display: flex;
 }
 
@@ -51,30 +91,7 @@
   margin-right: 5px; /* Abstand zwischen den Reitern */
 }
 
-/* Link-Stile für Navigation Reiter */
-.nav .nav-link {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  font-size: 16px;
-  padding: 5px 10px; /* Etwas Padding für bessere Klickfläche */
-}
-
-/* Stil für den aktiven Reiter */
-.nav .nav-link.active {
-  text-decoration: underline;
-  font-weight: bold; /* Fett für den aktiven Reiter */
-}
-
-/* Hover-Effekt für Links */
-.nav .nav-link:hover {
-  text-decoration: underline;
-}
-
 /* Container für Hauptinhalt */
-
 .container {
   max-width: 1080px;
   margin: 0 auto;
@@ -92,10 +109,14 @@
   margin-top: 3rem;
 }
 
-/* ------------------------------------------------------------------------------------ */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* ------------------------------------------------------------------------------------ */
 /* Stile für die Tabelle */
-
+/* ------------------------------------------------------------------------------------ */
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -103,10 +124,10 @@
   border-radius: 8px; /* Abgerundete Ecken für die Tabelle */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Schatten für einen 3D-Effekt */
 }
+
 body {
   font-size: 16px; /* Basis-Schriftgröße */
 }
-
 /* Kopfzeilen-Stile */
 .table thead th {
   background-color: #343a40; /* Dunkler Hintergrund für die Kopfzeile */
@@ -131,13 +152,13 @@ body {
 }
 
 /* ------------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------------ */
 /* Responsive Design für Tabellen und Container */
-/* Stile für kleine Bildschirme */
+/* ------------------------------------------------------------------------------------ */
+
 @media (max-width: 768px) {
   .nav .nav-item {
-    margin-left: 0px; /* Abstand zwischen den Reitern */
-    margin-right: 0px; /* Abstand zwischen den Reitern */
+    margin-left: 5px; /* geringerer Abstand zwischen den Reitern => verbesserte Aufteilung */
+    margin-right: 5px; /* geringerer Abstand zwischen den Reitern => verbesserte Aufteilung */
   }
   .table {
     height: 80%; /* Höhe der Zellen */
@@ -161,6 +182,11 @@ body {
   }
 }
 @media (max-width: 480px) {
+  .nav .nav-item {
+    margin-left: 2px; /* geringerer Abstand zwischen den Reitern => verbesserte Aufteilung */
+    margin-right: 2px; /* geringerer Abstand zwischen den Reitern => verbesserte Aufteilung */
+  }
+
   .table {
     height: 60%; /* Höhe der Zellen */
     font-size: 12px; /* Kleinere Schriftgröße für die Zellen */
@@ -181,52 +207,4 @@ body {
     width: 100px;
     height: 100px;
   }
-}
-/* ------------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------------ */
-/* Stile für die Navigationsreiter */
-.nav-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px; /* Abstand nach unten für bessere Lesbarkeit */
-}
-
-.nav .nav-item {
-  margin-left: 5px; /* Abstand zwischen den Reitern */
-}
-
-.nav .nav-link {
-  background-color: #f8f9fa; /* Hintergrundfarbe für Reiter */
-  border: 1px solid #ddd; /* Leichte Grenze für Reiter */
-  border-radius: 4px; /* Abgerundete Ecken für Reiter */
-  padding: 5px 10px; /* Innenabstand für Reiter */
-  cursor: pointer; /* Zeiger-Cursor für Klickbarkeit */
-  text-decoration: none; /* Keine Unterstreichung der Links */
-  color: #343a40; /* Textfarbe */
-  font-size: 15px; /* Schriftgröße */
-  transition: background-color 0.3s, color 0.3s; /* Übergangseffekte für Hintergrund- und Textfarbe */
-  width: 100px; /* festes Breite */
-  height: 70px; /* feste Höhe */
-  margin-top: 10px;
-}
-
-/* Stil für den aktiven Reiter */
-.nav .nav-link.active {
-  background-color: #343a40; /* Dunkler Hintergrund für aktiven Reiter */
-  color: white; /* Weiße Textfarbe für aktiven Reiter */
-  font-weight: bold; /* Fettdruck für aktiven Reiter */
-  margin-top: 10px;
-  width: 110px; /* Anpassung des Reiters zur besseren Visualisierung */
-  height: 75px; /* Anpassung des Reiters zur besseren Visualisierung */
-}
-
-/* Hover-Effekt für Reiter */
-.nav .nav-link:hover {
-  background-color: #e9ecef; /* Hellerer Hintergrund bei Hover */
-  color: #343a40; /* Textfarbe bei Hover */
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
