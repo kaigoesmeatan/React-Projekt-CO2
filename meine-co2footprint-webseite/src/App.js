@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  const [filterLand, setFilterLand] = useState('');
-  const [filterUnternehmen, setFilterUnternehmen] = useState('');
+  const [filterText, setFilterText] = useState('');
   const [activeTab, setActiveTab] = useState('Unsere Mission');
   const [activeFooterTab, setActiveFooterTab] = useState('');
   const [dir, setDir] = useState('ltr'); // => Standardmäßig 'ltr'
+
+  const allowedCharacters = /^[a-zA-Z0-9\s]*$/;
 
   useEffect(() => {
     // Dynamisch das 'dir' Attribut setzen basierend auf der Sprache
@@ -38,8 +39,8 @@ function App() {
   ];
 
   const filteredData = data.filter(item =>
-    item.land.toLowerCase().includes(filterLand.toLowerCase()) &&
-    item.unternehmen.toLowerCase().includes(filterUnternehmen.toLowerCase())
+    item.land.toLowerCase().includes(filterText.toLowerCase()) ||
+    item.unternehmen.toLowerCase().includes(filterText.toLowerCase())
   );
 
   return (
@@ -125,22 +126,16 @@ function App() {
             <div className="form-row">
               <div className="col">
                 <input
-                  type="text"
-                  id="filterLand"
-                  className="form-control"
-                  placeholder="Nach Land filtern"
-                  value={filterLand}
-                  onChange={(e) => setFilterLand(e.target.value)}
-                />
-              </div>
-              <div className="col">
-                <input
-                  type="text"
-                  id="filterUnternehmen"
-                  className="form-control"
-                  placeholder="Nach Unternehmen filtern"
-                  value={filterUnternehmen}
-                  onChange={(e) => setFilterUnternehmen(e.target.value)}
+                type="text"
+                id="filterText"
+                className="form-control filter-input"
+                placeholder="Nach Land oder Unternehmen filtern"
+                value={filterText}
+                onChange={(e) => {
+                  if (allowedCharacters.test(e.target.value)) {
+                    setFilterText(e.target.value);
+                  }
+                }}
                 />
               </div>
             </div>

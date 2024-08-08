@@ -120,6 +120,16 @@ img {
 }
 
 /* ------------------------------------------------------------------------------------ */
+/* Eingabefeld für Suche */
+/* ------------------------------------------------------------------------------------ */
+.filter-input {
+  width: 250px; /* Macht das Eingabefeld so breit wie der umgebende Container */
+  padding: 5px; /* Fügt Innenabstand hinzu, um das Feld größer zu machen */
+  font-size: 14px; /* Vergrößert die Schrift für bessere Lesbarkeit */
+  box-sizing: border-box; /* Stellt sicher, dass Padding berücksichtigt wird */
+}
+
+/* ------------------------------------------------------------------------------------ */
 /* Stile für die Tabelle */
 /* ------------------------------------------------------------------------------------ */
 .table {
