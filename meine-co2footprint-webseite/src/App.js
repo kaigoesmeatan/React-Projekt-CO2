@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
@@ -6,6 +6,19 @@ function App() {
   const [filterUnternehmen, setFilterUnternehmen] = useState('');
   const [activeTab, setActiveTab] = useState('Unsere Mission');
   const [activeFooterTab, setActiveFooterTab] = useState('');
+  const [dir, setDir] = useState('ltr'); // => Standardmäßig 'ltr'
+
+  useEffect(() => {
+    // Dynamisch das 'dir' Attribut setzen basierend auf der Sprache
+    // rtl => right to left
+    // ltr => left to right
+    const language = document.documentElement.lang;
+    if (['ar', 'he', 'fa'].includes(language)) { // Beispiel für RTL-Sprachen
+      setDir('rtl');
+    } else {
+      setDir('ltr');
+    }
+  }, []);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -30,7 +43,7 @@ function App() {
   );
 
   return (
-    <div>
+    <div dir={dir}>
       <header className="bg-dark text-white p-3">
         <div className="container">
           <div className="header-flex">
