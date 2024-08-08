@@ -33,7 +33,7 @@ function App() {
     { land: 'Deutschland', unternehmen: 'Thüringer Bratwurst Gbr', emissionen: '2.000.000' },
     { land: 'England', unternehmen: 'London Burger Ltd.', emissionen: '2.500.000' },
     { land: 'China', unternehmen: 'Glückskeks GmbH', emissionen: '3.800.000' },
-    { land: 'Schweiz', unternehmen: 'Wiener Schnitzel GmbH', emissionen: '3.100.000' },
+    { land: 'Schweiz', unternehmen: 'Wiener Schnitzel Holding', emissionen: '3.100.000' },
     { land: 'Mexico', unternehmen: 'Lecker Takkos GmbH', emissionen: '1.400.000' },
     { land: 'Italien', unternehmen: 'Pasta Imperium GmbH', emissionen: '4.600.000' },
   ];
