@@ -17,7 +17,7 @@ function App() {
     // Dynamisch das 'dir' Attribut setzen basierend auf der Sprache
     // rtl => right to left
     // ltr => left to right
-    if (['ar', 'he', 'fa'].includes(language)) { // Beispiel für RTL-Sprachen
+    if (['ar', 'he', 'fa'].includes(userLang)) { // Beispiel für RTL-Sprachen
       setDir('rtl');
     } else {
       setDir('ltr');
