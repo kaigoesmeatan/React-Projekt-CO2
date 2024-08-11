@@ -10,10 +10,13 @@ function App() {
   const allowedCharacters = /^[a-zA-ZäöüÄÖÜß0-9-\s]*$/;
 
   useEffect(() => {
+    // Ermittlung der bevorzugten Sprache des Benutzers
+    const userLang = navigator.language || navigator.userLanguage;
+    // HTML-Element auswählen und Sprachattribut setzen
+    document.documentElement.lang =userLang;
     // Dynamisch das 'dir' Attribut setzen basierend auf der Sprache
     // rtl => right to left
     // ltr => left to right
-    const language = document.documentElement.lang;
     if (['ar', 'he', 'fa'].includes(language)) { // Beispiel für RTL-Sprachen
       setDir('rtl');
     } else {
