@@ -96,6 +96,7 @@ function App() {
                 Team arbeitet daran, diese Plattform zu gestalten und umzusetzen, um der Öffentlichkeit
                 klare und verständliche Informationen zu bieten.</p>
               <p>Ziel ist es, informierte Entscheidungen zu fördern und den Dialog über den Klimawandel zu unterstützen.</p>
+              {/* hier weitere Inhalte für das Impressum hinzufügen */}
             </div>
           )}
           {activeTab === 'Über uns' && (
@@ -106,6 +107,7 @@ function App() {
                 Mit einem engagierten Team arbeiten wir daran, verständliche Daten bereitzustellen, um
                 Bewusstsein zu schaffen und umweltbewusste Entscheidungen zu fördern.</p>
               <p>Unser Ziel ist es, durch Klarheit und Aufklärung einen positiven Beitrag für den Planeten zu leisten.</p>
+               {/* hier weitere Inhalte für das Impressum hinzufügen */}
             </div>
           )}
           {activeTab === 'Kontakt' && (
@@ -120,6 +122,7 @@ function App() {
               <p>Für allgemeine Anfragen oder spezifische Anliegen können Sie auch unser Kontaktformular
                 auf der Webseite nutzen. Wir bemühen uns, Ihnen so schnell wie möglich zu antworten.
                 Vielen Dank für Ihr Interesse und Ihre Unterstützung!</p>
+                {/* hier weitere Inhalte für das Impressum hinzufügen */}
               </div>
           )}
 
