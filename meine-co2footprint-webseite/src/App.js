@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import { Tabelle } from './Tabelle'; // Importieren die Tabelle
 
 function App() {
   const [filterText, setFilterText] = useState('');
@@ -31,20 +32,6 @@ function App() {
   const handleFooterTabClick = (tab) => {
     setActiveFooterTab(tab);
   };
-
-  const data = [
-    { land: 'Deutschland', unternehmen: 'Thüringer Bratwurst Gbr', emissionen: '2.000.000' },
-    { land: 'England', unternehmen: 'London Burger Ltd.', emissionen: '2.500.000' },
-    { land: 'China', unternehmen: 'Glückskeks GmbH', emissionen: '3.800.000' },
-    { land: 'Schweiz', unternehmen: 'Wiener Schnitzel Holding', emissionen: '3.100.000' },
-    { land: 'Mexico', unternehmen: 'Lecker Takkos GmbH', emissionen: '1.400.000' },
-    { land: 'Italien', unternehmen: 'Pasta Imperium GmbH', emissionen: '4.600.000' },
-  ];
-
-  const filteredData = data.filter(item =>
-    item.land.toLowerCase().includes(filterText.toLowerCase()) ||
-    item.unternehmen.toLowerCase().includes(filterText.toLowerCase())
-  );
 
   return (
     <div dir={dir}>
@@ -125,46 +112,7 @@ function App() {
                 {/* hier weitere Inhalte für das Impressum hinzufügen */}
               </div>
           )}
-
-          {/* Der restliche Inhalt der Seite bleibt unverändert */}
-          <h2>Filtern der CO2-Emissionsdaten nach Land, oder Unternehmen</h2>
-          <form id="filterForm" className="mb-3">
-            <div className="form-row">
-              <div className="col">
-                <input
-                type="text"
-                id="filterText"
-                className="form-control filter-input"
-                placeholder="Nach Land oder Unternehmen filtern"
-                value={filterText}
-                onChange={(e) => {
-                  if (allowedCharacters.test(e.target.value)) {
-                    setFilterText(e.target.value);
-                  }
-                }}
-                />
-              </div>
-            </div>
-          </form>
-
-          <table id="emissionsTable" className="table table-striped table-bordered">
-            <thead>
-              <tr>
-                <th>Land</th>
-                <th>Unternehmen</th>
-                <th>Jährliche Emissionen (Tonnen CO2)</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredData.map((item, index) => (
-                <tr key={index}>
-                  <td>{item.land}</td>
-                  <td>{item.unternehmen}</td>
-                  <td>{item.emissionen}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <Tabelle />
         </div>
       </main>
 
