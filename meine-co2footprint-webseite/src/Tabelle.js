@@ -25,7 +25,7 @@ export function Tabelle() {
 
   return (
     <div>
-      <h2>Filtern der CO2-Emissionsdaten nach Land, oder Unternehmen</h2>
+      <h2>Filtern der CO2-Emissionsdaten nach Land oder Unternehmen</h2>
       <form id="filterForm" className="mb-3">
         <div className="form-row">
           <div className="col">
